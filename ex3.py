@@ -2,15 +2,15 @@
 print "I will now count my chickens:"
 
 # prints phrase and does math
-print "Hens", 25 + 30 / 6
+print "Hens", 25.0 + 30.0 / 6.0
 # prints phrase and does math
-print "Roosters", 100 - 25 * 3 % 4
+print "Roosters", 100.0 - 25.0 * 3.0 % 4.0
 
 # prints phrase
 print "Now I will count the eggs:"
 
 # prints math
-print 3 + 2 + 1 - 5 + 4 % 2 - 1 / 4 + 6
+print 3 + 2 + 1 - 5 + 4.0 % 2.0 - 1 / 4.0 + 6.0
 
 # prints phrase
 print "Is it true that 3 + 2 < 5 - 7?"
