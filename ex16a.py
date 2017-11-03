@@ -41,6 +41,7 @@ def edittype(editmode, userfile):
         print status
     elif editmode == "COPY":
         status = copyfile(userfile)
+        print status
     else:
         print "Thanks for trying!"
 
@@ -52,22 +53,24 @@ def copyfile(userfile):
     print "You would like to name it %s?" % newfilenameraw
     print "It will be named %s.txt" % newfilenameraw
     newfilename = "%s.txt" % newfilenameraw
-    newfile = open(newfilename, 'rw')
+    newfile = open(newfilename, 'w+')
     olddata = userfile.read()
     olddatalength = len(olddata)
     print "Total Data to be Copied: %d bytes." % olddatalength
     newfile.write(olddata)
-    print "The new file reads:"
-    print newfile.read()
+    newfile.close()
+    newfile = open(newfilename,'r')
     return "All Done."
 
-
+# Actual script running
 target = open(filename, 'rw')
 print "%s is open.\n" % filename
+
 
 action = startedit(filename)
 print "You would like to: %s" % action
 print "Is that correct? [y/n]"
+
 confirm = raw_input(prompt).upper()
 if confirm == "Y" or "YES":
     edittype(action, target)
