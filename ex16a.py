@@ -1,4 +1,5 @@
 from sys import argv
+from os.path import exists
 
 script, filename = argv
 
@@ -9,6 +10,7 @@ prompt = ">"
 def startedit(userfilestr):
     print "What would you like to do with %s?" % userfilestr
     print "If you would like to erase the file, type ERASE."
+    print "If you would like to copy this file into a new file, type COPY."
     print "If you would like to append something to the file, type APPEND."
     print "If you would like to close the file, type CLOSE."
     print "If you would like to suddenly end this script, press CTRL-C."
@@ -37,12 +39,30 @@ def edittype(editmode, userfile):
     elif editmode == "APPEND":
         status = addtofile(userfile)
         print status
+    elif editmode == "COPY":
+        status = copyfile(userfile)
     else:
         print "Thanks for trying!"
 
+def copyfile(userfile):
+    print "What file would you like to copy?"
+    print "Is it %s?" % userfile
+    print "What would you like to name the new file?"
+    newfilenameraw = raw_input(prompt)
+    print "You would like to name it %s?" % newfilenameraw
+    print "It will be named %s.txt" % newfilenameraw
+    newfilename = "%s.txt" % newfilenameraw
+    newfile = open(newfilename, 'rw')
+    olddata = userfile.read()
+    olddatalength = len(olddata)
+    print "Total Data to be Copied: %d bytes." % olddatalength
+    newfile.write(olddata)
+    print "The new file reads:"
+    print newfile.read()
+    return "All Done."
 
 
-target = open(filename, 'w')
+target = open(filename, 'rw')
 print "%s is open.\n" % filename
 
 action = startedit(filename)
