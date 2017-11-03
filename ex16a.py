@@ -9,6 +9,7 @@ prompt = ">"
 # Establishing Functions
 def startedit(userfilestr):
     print "What would you like to do with %s?" % userfilestr
+    print "If you would like to read the file, type READ."
     print "If you would like to erase the file, type ERASE."
     print "If you would like to copy this file into a new file, type COPY."
     print "If you would like to append something to the file, type APPEND."
@@ -33,6 +34,8 @@ def edittype(editmode, userfile):
     if editmode == "CLOSE":
         userfile.close()
         print "File closed."
+    elif editmode == "READ":
+        print userfile.read()
     elif editmode == "ERASE":
         userfile.truncate()
         print "File erased."
