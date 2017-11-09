@@ -91,7 +91,8 @@ def entryway():
         print "The whirring that was heard upon entering gets louder."
         print "You see a wooden box glowing in the distance,"
         if 'DRUM' not in inventory:
-            print "As an offering to the box, there is a small DRUM"
+            print "As an offering to the box,"
+            print "there is a small DRUM"
             print "in a circle on the floor."
         print "You inspect the room and find nothing else of consequence."
         print "Do you go BACK or do something else?"
