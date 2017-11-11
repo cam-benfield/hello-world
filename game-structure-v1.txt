@@ -1,0 +1,23 @@
+* Class for Rooms
+  * Current Room Check
+  * Print Room Text
+    * Room Name
+    * Room Description
+  * Room Choices
+  * Next Room Check
+    * Base on Choices
+
+* Class for Character
+  * Character Name
+  * Inventory Check
+  * Inventory Print
+Information
+
+* Housekeeping
+  * Name Generation
+  * Inventory Generation
+* Outside
+* Entryway
+* Office
+* Kitchen
+* Altar Room
