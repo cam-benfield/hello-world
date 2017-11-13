@@ -1,5 +1,0 @@
-txt file with plot
-
-array with corresponding lines and filenames/rooms
-
-engine that checks status and bases line read on filename/room input
